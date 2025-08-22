@@ -22,7 +22,7 @@ from requests import get, post
 from gzip import compress
 
 
-_api_url = 'https://bytebin.lucko.me/post'
+_api_url = 'https://api.pastes.dev/post'
 _pasted_link = 'https://pastes.dev/{}'
 
 
