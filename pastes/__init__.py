@@ -19,7 +19,7 @@
 
 from .main import paste, apaste, LANGUAGES
 
-__version__ = version = '1..0'
+__version__ = version = '1.3.1'
 
 __all__ = [
     'paste',
