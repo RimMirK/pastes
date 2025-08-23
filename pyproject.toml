@@ -7,7 +7,7 @@ name = "pastes"
 version = "1.4.2"
 description = "Minimalistic Python client for pastes.dev"
 readme = "README.md"
-license = { file = "LICENCE", text = "GPL-3.0" }
+license = { file = "LICENCE" }
 requires-python = ">=3.8"
 dependencies = ["requests", "httpx"]
 authors = [
