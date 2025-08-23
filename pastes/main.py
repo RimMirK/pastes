@@ -85,7 +85,7 @@ def paste(code, language = 'auto'):
 
 def get_paste(url):
     return get(_api_url+(url.rstrip("/").split("/")[-1])).text
-l
+
 # async
 import httpx
 
@@ -109,3 +109,4 @@ async def aget_paste(url):
 
     response.raise_for_status()
     return response.text
+
