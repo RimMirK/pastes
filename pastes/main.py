@@ -85,20 +85,27 @@ def paste(code, language = 'auto'):
 
 def get_paste(url):
     return get(_api_url+(url.rstrip("/").split("/")[-1])).text
-
+l
 # async
-from httpx import post as apost
+import httpx
 
-async def apaste(code, language = 'auto'):
+async def apaste(code, language = "auto"):
     headers = {
-        'Content-Type': f'text/{language}',
-        'Content-Encoding': 'gzip',
+        "Content-Type": f"text/{language}",
+        "Content-Encoding": "gzip",
     }
-    
-    gzip_data = compress(code.encode('utf-8'))
-    
-    response = apost(_api_url, data=gzip_data, headers=headers)
-    
-    return _pasted_link.format(response.json()['key'])
 
+    gzip_data = compress(code.encode("utf-8"))
 
+    async with httpx.AsyncClient() as client:
+        response = await client.post(_api_url+"post", data=gzip_data, headers=headers)
+
+    response.raise_for_status()
+    return _pasted_link.format(response.json()["key"])
+
+async def aget_paste(url):
+    async with httpx.AsyncClient() as client:
+        response = await client.post(_api_url+(url.rstrip("/").split("/")[-1]))
+
+    response.raise_for_status()
+    return response.text
