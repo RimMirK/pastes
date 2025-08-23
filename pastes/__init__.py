@@ -22,10 +22,13 @@ from .main import paste, apaste, LANGUAGES
 __version__ = version = '1.3.1'
 
 __all__ = [
+    '_set_api_url',
     'paste',
+    'get_paste',
+    'aget_paste',
     'apaste',
     'version',
-    'LANGUAGES',
-
+    'LANGUAGES'
 ]
+
 
