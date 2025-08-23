@@ -12,4 +12,4 @@ description = "Minimalistic Python client for pastes.dev"
 readme = "README.md"
 license = { file = "LICENCE" }
 requires-python = ">=3.8"
-dependencies = ["requests"]
+dependencies = ["requests", "httpx"]
