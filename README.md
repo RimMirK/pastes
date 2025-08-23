@@ -13,7 +13,7 @@ Share your code in seconds with a simple function call.
 - 🌀 Both **sync** and **async** APIs  
 - ⚡ One-liner usage  
 - 📤 Returns instant paste URL  
-- 🐍 Pure Python, only requests required
+- 🐍 Pure Python, only requests and httpx are required
 
 ---
 
@@ -86,5 +86,6 @@ asyncio.run(main())
 ## 👨‍💻 Author
 
 Made with ❤️ by [@RimMirK](https://t.me/RimMirK)
+
 
 
