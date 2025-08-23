@@ -1,26 +1,26 @@
-# Pasters
-[![PyPI](https://img.shields.io/pypi/v/pasters?color=blue&label=PyPI)](https://pypi.org/project/pasters/)
-[![Python](https://img.shields.io/pypi/pyversions/pasters.svg?logo=python&logoColor=yellow)](https://pypi.org/project/pasters/)
-[![License](https://img.shields.io/github/license/RimMirK/pasters?color=green)](LICENSE)
+# Pastes
+[![PyPI](https://img.shields.io/pypi/v/pastes?color=blue&label=PyPI)](https://pypi.org/project/pastes/)
+[![Python](https://img.shields.io/pypi/pyversions/pastes.svg?logo=python&logoColor=yellow)](https://pypi.org/project/pastes/)
+[![License](https://img.shields.io/github/license/RimMirK/pastes?color=green)](LICENSE)
 [![StandWithUkraine](https://raw.githubusercontent.com/vshymanskyy/StandWithUkraine/main/badges/StandWithUkraine.svg)](https://github.com/vshymanskyy/StandWithUkraine/blob/main/docs/README.md)
 
-Minimalistic Python client for [paste.rs](https://paste.rs/)  
-Share text or code in seconds with one simple call.  
+Minimalistic Python client for [pastes.dev](https://pastes.dev/)
+Share your code in seconds with a simple function call.  
 
 ---
 
 ## ✨ Features
 - 🌀 Both **sync** and **async** APIs  
 - ⚡ One-liner usage  
-- 📤 Instant paste URL  
-- 🐍 Pure Python (depends only on `requests` and `httpx`)  
+- 📤 Returns instant paste URL  
+- 🐍 Pure Python, only requests and httpx are required
 
 ---
 
 ## 📦 Installation
 ```sh
-pip install pasters
-````
+pip install pastes
+```
 
 ---
 
@@ -28,53 +28,60 @@ pip install pasters
 
 ### 🔹 Sync
 
-```python
-from pasters import paste, get_paste, delete_paste
+```py
+from pastes import paste, get_paste, _set_api_url
+
+# set custom API endpoint (optional)
+_set_api_url("https://my-api.example.com")
+
+code = """
+def fib(n):
+    a, b = 0, 1
+    while a < n:
+        print(a, end=' ')
+        a, b = b, a+b
+    print()
+fib(1000)
+"""
 
 # create paste
-url = paste("print('hello world')", ext="py")
-print(url)  # https://paste.rs/abcd.py
+url = paste(code)
+print(url)  # https://pastes.dev/UUHlliP7SF
 
 # fetch paste
-print(get_paste(url))
-
-# delete paste
-delete_paste(url)
+print(get_paste(url))  # def fib(n): ...
 ```
 
 ### 🔹 Async
 
-```python
-from pasters import apaste, aget_paste, adelete_paste
+```py
+from pastes import apaste, aget_paste, _set_api_url
 import asyncio
+
+# set custom API endpoint (optional)
+_set_api_url("https://my-api.example.com")
+
+code = """
+def fib(n):
+    a, b = 0, 1
+    while a < n:
+        print(a, end=' ')
+        a, b = b, a+b
+    print()
+fib(1000)
+"""
 
 async def main():
     # create paste
-    url = await apaste("# some markdown text", ext="md")
-    print(url)  # https://paste.rs/efgh.md
+    url = await apaste(code)
+    print(url)  # https://pastes.dev/UUHlliP7SF
 
     # fetch paste
     text = await aget_paste(url)
-    print(text)
-
-    # delete paste
-    await adelete_paste(url)
+    print(text) # def fib(n): ...
 
 asyncio.run(main())
 ```
-
----
-
-## API
-
-* `paste(text, ext='', allow_206=False) -> str`
-* `apaste(text, ext='', allow_206=False) -> str`
-* `get_paste(url) -> str`
-* `aget_paste(url) -> str`
-* `delete_paste(url) -> None`
-* `adelete_paste(url) -> None`
-
----
 
 ## 👨‍💻 Author
 
