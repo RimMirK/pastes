@@ -22,7 +22,7 @@ from requests import get, post
 from gzip import compress
 
 
-_api_url = 'https://api.pastes.dev/post'
+_api_url = 'https://api.pastes.dev/'
 _pasted_link = 'https://pastes.dev/{}'
 
 
@@ -65,7 +65,12 @@ LANGUAGES = [
     "proto"
 ]
 
+# general
+def _set_api_url(new_url):
+    global _api_url
+    _api_url = new_url if new_url.endswith("/") else new_url+"/"
 
+# sync
 def paste(code, language = 'auto'):
     headers = {
         'Content-Type': f'text/{language}',
@@ -74,21 +79,36 @@ def paste(code, language = 'auto'):
 
     gzip_data = compress(code.encode('utf-8'))
 
-    response = post(_api_url, data=gzip_data, headers=headers)
+    response = post(_api_url+"post", data=gzip_data, headers=headers)
     
     return _pasted_link.format(response.json()['key'])
 
-from httpx import post as apost
+def get_paste(url):
+    return get(_api_url+(url.rstrip("/").split("/")[-1])).text
 
-async def apaste(code, language = 'auto'):
+# async
+import httpx
+
+async def apaste(code, language = "auto"):
     headers = {
-        'Content-Type': f'text/{language}',
-        'Content-Encoding': 'gzip',
+        "Content-Type": f"text/{language}",
+        "Content-Encoding": "gzip",
     }
-    
-    gzip_data = compress(code.encode('utf-8'))
-    
-    response = apost(_api_url, data=gzip_data, headers=headers)
-    
-    return _pasted_link.format(response.json()['key'])
+
+    gzip_data = compress(code.encode("utf-8"))
+
+    async with httpx.AsyncClient() as client:
+        response = await client.post(_api_url+"post", data=gzip_data, headers=headers)
+
+    response.raise_for_status()
+    return _pasted_link.format(response.json()["key"])
+
+async def aget_paste(url):
+    async with httpx.AsyncClient() as client:
+        response = await client.get(_api_url+(url.rstrip("/").split("/")[-1]))
+
+    response.raise_for_status()
+    return response.text
+
+
 
