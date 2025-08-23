@@ -1,4 +1,6 @@
-# Pastes
+![pasters](.github/logo+name-lt.png#gh-light-mode-only)
+![pasters](.github/logo+name-dt.png#gh-dark-mode-only)
+
 [![PyPI](https://img.shields.io/pypi/v/pastes?color=blue&label=PyPI)](https://pypi.org/project/pastes/)
 [![Python](https://img.shields.io/pypi/pyversions/pastes.svg?logo=python&logoColor=yellow)](https://pypi.org/project/pastes/)
 [![License](https://img.shields.io/github/license/RimMirK/pastes?color=green)](LICENSE)
@@ -86,3 +88,4 @@ asyncio.run(main())
 ## 👨‍💻 Author
 
 Made with ❤️ by [@RimMirK](https://t.me/RimMirK)
+
