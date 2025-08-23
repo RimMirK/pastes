@@ -13,9 +13,7 @@ dependencies = ["requests", "httpx"]
 authors = [
   { name = "RimMirK", email = "me@RimMirK.pp.ua" }
 ]
-urls = {
-    Repository = "https://github.com/RimMirK/pastes"
-}
+urls = { Repository = "https://github.com/RimMirK/pastes" }
 
 keywords = ["paste", "pastes", "pastes.dev", "code", "pastebin", "client", "share", "send"]
 
