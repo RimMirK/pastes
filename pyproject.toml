@@ -17,7 +17,7 @@ urls = {
     "Repository" = "https://github.com/RimMirK/pastes",
 }
 
-keywords = ["paste", "client", "minimalistic", "http", "requests", "httpx"]
+keywords = ["paste", "pastes", "pastes.dev", "code", "pastebin", "client", "share", "send"]
 
 classifiers = [
     "Development Status :: 5 - Production/Stable",
