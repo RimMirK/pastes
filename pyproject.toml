@@ -4,12 +4,36 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "pastes"
-version = "1.4.1"
-authors = [
-  { name="RimMirK", email="me@RimMirK.pp.ua" }
-]
+version = "1.4.2"
 description = "Minimalistic Python client for pastes.dev"
 readme = "README.md"
-license = { file = "LICENCE" }
+license = { file = "LICENCE", text = "GPL-3.0" }
 requires-python = ">=3.8"
 dependencies = ["requests", "httpx"]
+authors = [
+  { name = "RimMirK", email = "me@RimMirK.pp.ua" }
+]
+urls = {
+    "Repository" = "https://github.com/RimMirK/pastes",
+}
+
+keywords = ["paste", "client", "minimalistic", "http", "requests", "httpx"]
+
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Intended Audience :: Developers",
+    "Topic :: Software Development :: Libraries",
+    "License :: OSI Approved :: GNU General Public License v3 (GPLv3)",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Operating System :: OS Independent",
+]
+
+[tool.setuptools]
+packages = ["pastes"]
+include-package-data = true
+zip-safe = false
