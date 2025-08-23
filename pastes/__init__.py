@@ -8,8 +8,7 @@
 #  the Free Software Foundation, version 3 of the License.
 #
 #  pastes is an independent, unofficial client library.
-#  It provides a very simple interface for uploading code to pastes.dev:
-#  just two functions are available — paste() and apaste().
+#  It provides a very simple interface for uploading and getting code from pastes.dev
 #
 #  You should have received a copy of the GNU General Public License
 #  along with pastes.  If not, see the LICENSE file.
@@ -19,7 +18,7 @@
 
 from .main import _set_api_url, paste, get_paste, apaste, aget_paste, LANGUAGES
 
-__version__ = version = '1.4.0'
+__version__ = version = '1.4.1'
 
 __all__ = [
     '_set_api_url',
@@ -30,7 +29,3 @@ __all__ = [
     'version',
     'LANGUAGES'
 ]
-
-
-
-
