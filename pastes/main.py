@@ -105,9 +105,10 @@ async def apaste(code, language = "auto"):
 
 async def aget_paste(url):
     async with httpx.AsyncClient() as client:
-        response = await client.post(_api_url+(url.rstrip("/").split("/")[-1]))
+        response = await client.get(_api_url+(url.rstrip("/").split("/")[-1]))
 
     response.raise_for_status()
     return response.text
+
 
 
