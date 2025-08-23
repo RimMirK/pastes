@@ -17,7 +17,7 @@
 #  Repository: https://github.com/RimMirK/pastes
 #  Telegram: @RimMirK
 
-from .main import paste, apaste, LANGUAGES
+from .main import _set_api_url, paste, get_paste, apaste, aget_paste, LANGUAGES
 
 __version__ = version = '1.3.1'
 
@@ -30,5 +30,6 @@ __all__ = [
     'version',
     'LANGUAGES'
 ]
+
 
 
