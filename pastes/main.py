@@ -73,7 +73,7 @@ def _set_api_url(new_url):
 def _set_user_agent(new_user_agent):
     global _user_agent, _default_headers
     _user_agent = new_user_agent
-    _default_headers.update({"User-Agent": _user_agent})
+    _default_headers.update({"User-Agent": new_user_agent})
     
 
 
@@ -118,6 +118,7 @@ async def aget_paste(url):
 
     response.raise_for_status()
     return response.text
+
 
 
 
