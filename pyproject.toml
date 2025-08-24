@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "pastes"
-version = "1.4.2"
+version = "dev-1.5"
 description = "Minimalistic Python client for pastes.dev"
 readme = "README.md"
 license = { file = "LICENCE" }
