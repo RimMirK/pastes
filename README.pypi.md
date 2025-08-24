@@ -1,4 +1,4 @@
-![pasters](https://github.com/RimMirK/pastes/tree/main/.github/logo+name_pypi.png)
+![pasters](https://github.com/RimMirK/pastes/blob/main/.github/logo+name_pypi.png)
 
 [![PyPI](https://img.shields.io/pypi/v/pastes?color=blue&label=PyPI)](https://pypi.org/project/pastes/)
 [![Python](https://img.shields.io/pypi/pyversions/pastes.svg?logo=python&logoColor=yellow)](https://pypi.org/project/pastes/)
