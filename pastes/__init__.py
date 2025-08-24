@@ -18,7 +18,7 @@
 
 from .main import _set_api_url, paste, get_paste, apaste, aget_paste, LANGUAGES
 
-__version__ = version = '1.4.2'
+__version__ = version = 'dev-1.5'
 
 __all__ = [
     '_set_api_url',
@@ -29,4 +29,5 @@ __all__ = [
     'version',
     'LANGUAGES'
 ]
+
 
