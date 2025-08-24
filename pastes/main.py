@@ -23,7 +23,7 @@ from . import version
 
 _api_url = 'https://api.pastes.dev/'
 _pasted_link = 'https://pastes.dev/{}'
-_user_agent = f'pastes/{verion} (https://github.com/RimMirK/pastes)'
+_user_agent = f'pastes/{version} (https://github.com/RimMirK/pastes)'
 _default_headers = {"User-Agent": _user_agent}
 
 LANGUAGES = [
@@ -118,6 +118,7 @@ async def aget_paste(url):
 
     response.raise_for_status()
     return response.text
+
 
 
 
