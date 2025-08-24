@@ -17,7 +17,7 @@
 #  Telegram: @RimMirK
 
 
-__version__ = version = '1.5.0'
+__version__ = version = '1.5.1'
 
 from .main import _set_api_url, _set_user_agent, paste, get_paste, apaste, aget_paste, LANGUAGES
 
@@ -32,5 +32,6 @@ __all__ = [
     'version',
     'LANGUAGES'
 ]
+
 
 
