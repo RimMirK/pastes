@@ -31,10 +31,13 @@ pip install pastes
 ### 🔹 Sync
 
 ```py
-from pastes import paste, get_paste, _set_api_url
+from pastes import paste, get_paste, _set_api_url, _set_user_agent
 
 # set custom API endpoint (optional)
 _set_api_url("https://my-api.example.com")
+
+# set custom user agent (optional)
+_set_user_agent("My project/1.0.0")
 
 code = """
 def fib(n):
@@ -57,11 +60,14 @@ print(get_paste(url))  # def fib(n): ...
 ### 🔹 Async
 
 ```py
-from pastes import apaste, aget_paste, _set_api_url
+from pastes import apaste, aget_paste, _set_api_url, _set_user_agent
 import asyncio
 
 # set custom API endpoint (optional)
 _set_api_url("https://my-api.example.com")
+
+# set custom user agent (optional)
+_set_user_agent("My project/1.0.0")
 
 code = """
 def fib(n):
@@ -88,4 +94,5 @@ asyncio.run(main())
 ## 👨‍💻 Author
 
 Made with ❤️ by [@RimMirK](https://t.me/RimMirK)
+
 
