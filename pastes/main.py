@@ -19,7 +19,7 @@
 
 from requests import get, post
 from gzip import compress
-from main import version 
+from . import version 
 
 _api_url = 'https://api.pastes.dev/'
 _pasted_link = 'https://pastes.dev/{}'
@@ -118,6 +118,7 @@ async def aget_paste(url):
 
     response.raise_for_status()
     return response.text
+
 
 
 
